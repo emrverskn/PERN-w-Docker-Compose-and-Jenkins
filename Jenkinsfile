@@ -8,7 +8,7 @@ pipeline{
         stage('Deploy the App') {
             steps {
                 echo 'Deploy the App'
-                sh 'ls -l'
+                // sh 'ls -l'
                 // sh 'docker --version'
                 script {
                     dockerComposeBuild(
