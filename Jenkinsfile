@@ -20,12 +20,12 @@ pipeline {
     }
     
 
-    post {
-        success {
-        script {
-        slackSend channel: '#class-chat', color: '#439FE0', message: 'Bayramınızı enişten duygularınla kutlarım.', teamDomain: 'devops15tr', tokenCredentialId: 'jenkins-slack'
-            }
-    }
-    }  
+    // post {
+    //     success {
+    //     script {
+    //     slackSend channel: '#class-chat', color: '#439FE0', message: 'This project with Ansible is ready and pipeline passed succesfully !', teamDomain: 'devops15tr', tokenCredentialId: 'jenkins-slack'
+    //         }
+    // }
+    // }  
 
 }
