@@ -8,7 +8,7 @@ services:
     restart: always
     environment:
       # POSTGRES_PASSWORD: ./db_password.txt
-      POSTGRES_PASSWORD: "Pp123456789"
+      POSTGRES_PASSWORD: "*****"
     networks:
       - mynet
     volumes:
