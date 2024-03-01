@@ -1,31 +1,23 @@
-pipeline{
+pipeline {
     agent any
-    tools {
-           dockerTool 'docker'            
-    }
-
-    stages { 
+    stages {
         stage('Deploy the App') {
             steps {
                 echo 'Deploy the App'
                 sh 'ls -l'
                 sh 'docker --version'
-                sh 'docker-compose build'
-                }        
-             }
-        }
-
-    
-
-        stage('Destroy the infrastructure'){
-            steps{
-                timeout(time:5, unit:'DAYS'){
-                    input message:'Approve terminate'
-                }
-                sh 'docker-compose down'
-                } 
+                sh 'docker-compose build' 
             }
         }
+        stage('Destroy the infrastructure') {
+            steps {
+                timeout(time:5, unit:'DAYS') {
+                    input message:'Approve terminate'
+                }
+                sh 'docker-compose down' 
+            }
+        }
+    }
     
 
     post {
@@ -36,3 +28,4 @@ pipeline{
     }
     }  
 
+}
