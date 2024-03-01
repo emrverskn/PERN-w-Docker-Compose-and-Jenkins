@@ -9,7 +9,7 @@ pipeline{
             steps {
                 echo 'Deploy the App'
                 sh 'ls -l'
-                sh 'docker --version'
+                // sh 'docker --version'
                 script {
                     dockerComposeBuild(
                         composeFile: 'docker-compose.yaml')
